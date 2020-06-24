@@ -1,0 +1,14 @@
+<CORSConfiguration>
+<CORSRule>
+	<ID>Allow sajacosmetics</ID>
+    <AllowedOrigin>https://sajacosmetics.com</AllowedOrigin>
+    <AllowedOrigin>https://www.sajacosmetics.com</AllowedOrigin>
+    <AllowedOrigin>http://www.sajacosmetics.com</AllowedOrigin>
+    <AllowedMethod>GET</AllowedMethod>
+    <AllowedMethod>HEAD</AllowedMethod>
+    <AllowedHeader>Content-*</AllowedHeader>
+    <AllowedHeader>Host</AllowedHeader>
+    <ExposeHeader>ETag</ExposeHeader>
+    <MaxAgeSeconds>86400</MaxAgeSeconds>
+</CORSRule>
+</CORSConfiguration>

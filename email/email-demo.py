@@ -5,15 +5,15 @@ import imghdr
 
 from email.message import EmailMessage
 
-EMAIL_PASSW = os.environ.get('PASSW')
-EMAIL_ADDRESS = os.environ.get('EUSER')
+EMAIL_PASSW = os.environ.get('ZOHOPASS')
+EMAIL_ADDRESS = "admin@sajacosmetics.com"
 
 msg = EmailMessage()
 
-msg['Subject'] = 'Grab dinner this weekend?'
-msg['From'] = 'EMAIL_ADDRESS'
-msg['To'] = 'yassine-boss4@hotmail.fr'
-msg.set_content('how about dinner at 5pm this monday')
+msg['Subject'] = 'django we\'re almost there'
+msg['From'] = f"{EMAIL_ADDRESS}"
+msg['To'] = 'agalmameyassine@gmail.com'
+msg.set_content('django')
 
 with open('images.png','rb') as f:
     file_data = f.read()
@@ -29,8 +29,8 @@ msg.add_alternative("""\
 
 msg.add_attachment(file_data,maintype='image', subtype=file_type,filename=file_name)
 
-print(f'password:{EMAIL_PASSW} \n address:{EMAIL_ADDRESS}')
-with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
+print(f"From: {msg['From']} -->\n To: {msg['To']}")
+with smtplib.SMTP_SSL('smtp.zoho.com', 110) as smtp:
    # smtp.ehlo()
    # smtp.starttls()
    # smtp.ehlo()
